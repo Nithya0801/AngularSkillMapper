@@ -1,0 +1,25 @@
+<p>
+  searchcomponent works!
+</p>
+
+<div id="search-component">
+  <h4>Employee Name Search</h4>
+  <form>
+  <input #searchBox>
+  <button (click)="search(searchBox.value)">Search</button>
+</form>
+  {{searchBox.value}}
+  <ul class="search-result">
+    <li *ngFor="let emps of employee" >
+      <!-- <a routerLink="/detail/{{emp.id}}">
+        {{hero.name}}
+      </a> -->
+
+      {{emps.employeeid}}
+    </li>
+  </ul>
+
+  <div *ngFor = 'let l of emps'>
+    <li><span>{{l.employeeid}} : {{l.employeename}}</span></li>
+    </div>
+</div>

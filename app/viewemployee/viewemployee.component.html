@@ -1,0 +1,23 @@
+<p>
+  viewemployee works!
+</p>
+
+<div *ngFor = 'let l of emps' (click)='onSelectEmployee(l)'>
+<li><span>{{l.employeeid}} : {{l.employeename}}</span></li>
+</div> 
+
+<div *ngIf="emp">
+
+  <h2>{{ emp.employeename | uppercase }} Details</h2>
+  <div><span >ID : </span>{{emp.employeeid}}</div><br>
+  <div><span>NAME : </span><input [(ngModel)]=" emp.employeename" > </div><br>
+  <div><span>DOB : </span><input [(ngModel)]="emp.dob"> </div><br>
+  <div><span>QUALIFICATION : </span><input [(ngModel)]="emp.qualification "> </div><br>
+  <div><span>DESIGNATION : </span><input [(ngModel)]="emp.desgn "> </div><br>
+  <div><button  routerLink="delete/:employeeid" (click)="deleteEmployeeComponent(emp)">Delete</button> <button routerLink="update" (click)="updateEmployeeComponent(emp)">Edit</button></div>
+</div>
+
+<div *ngIf="emp">
+<app-updatecomp [emp]="selectedEmployee"></app-updatecomp> 
+
+</div>

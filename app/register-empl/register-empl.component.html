@@ -1,0 +1,41 @@
+<p>
+  Register!!!
+</p>
+
+<div>
+  <form >
+  <table>
+  <tr><label>Employee ID:</label>
+    <input #employeeid /></tr>
+  <br>
+  <tr><label>Employee Name:</label>
+    <input #employeename /></tr>
+  <br>
+  <tr><label>DOB :
+    <input #dob />
+  </label></tr><br>
+  <tr><label>Gender :
+    <input #gender />
+  </label></tr><br>
+  <tr><label>Address :
+    <input #address/>
+  </label></tr><br>
+  <tr><label>PhoneNo :
+    <input #phoneno/>
+  </label></tr><br>
+  <tr><label>DOJ :
+    <input #doj/>
+  </label></tr><br>
+  <tr><label>Designation :
+    <input #desgn/>
+  </label></tr><br>
+  <tr><label>Qualification :
+    <input #qualification/>
+  </label></tr><br>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button routerLink='/add' (click)='add(employeeid.value,employeename.value,dob.value,gender.value,address.value,phoneno.value,doj.value,desgn.value,qualification.value)'>
+    add
+  </button>
+</table>
+</form>
+</div>
