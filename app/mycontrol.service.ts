@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Observable, of } from 'rxjs';
 import {Employee} from './Employee';
+import {Skill} from './Skill';
 
 //import {EMPLOYEES} from './employeelist';
 
@@ -16,6 +17,7 @@ const httpOptions = {
 export class MycontrolService {
 
   private myurl = 'http://localhost:8086/RestControllerDemo/api/employee';
+  private myskillurl= 'http://localhost:8086/RestControllerDemo/api/employee/skill';
   constructor(private http : HttpClient) { }
 
   getAllEmployee():Observable<Employee[]>
@@ -32,6 +34,15 @@ export class MycontrolService {
     return this.http.get<Employee>(url);
   }
 
+ getSkillById(employeeid : number ) : Observable<Skill>{
+  const url=this.myskillurl+"/id/"+employeeid;
+  return this.http.get<Skill>(url);
+ }
+
+ getSkill(skill : string) : Observable<Skill>{
+   const url=this.myskillurl+"/"+skill;
+   return this.http.get<Skill>(url);
+ }
   deleteEmployee(employee : Employee) : Observable<Employee>{
     const url=this.myurl+'/'+employee.employeeid;
     return this.http.delete<Employee>(url,httpOptions);
