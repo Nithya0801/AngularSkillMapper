@@ -52,6 +52,10 @@ export class MycontrolService {
     return this.http.put(this.myurl,employee,httpOptions);
   }
 
+  updateSkill(skill : Skill) : Observable<any>{
+    return this.http.put(this.myskillurl,skill,httpOptions);
+  }
+
   searchEmployee(employeeid : number): Observable<Employee>
   {
     const url=this.myurl+'/'+employeeid;

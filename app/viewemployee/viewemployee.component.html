@@ -14,9 +14,9 @@
   <div><span>QUALIFICATION : </span><input [(ngModel)]="emp.qualification "> </div><br>
   <div><span>DESIGNATION : </span><input [(ngModel)]="emp.desgn "> </div><br>
   <div *ngIf="sk">
-    <div><span>Skill : {{sk.skill}}</span></div>
+    <div><span>Skill : {{sk.skill}}</span><input [(ngModel)]="sk.skill "></div>
   </div>
-  <div><button  routerLink="delete/:employeeid" (click)="deleteEmployeeComponent(emp)">Delete</button> <button routerLink="update" (click)="updateEmployeeComponent(emp)">Edit</button></div>
+  <div><button  routerLink="delete/:employeeid" (click)="deleteEmployeeComponent(emp)">Delete</button> <button routerLink="update" (click)="updateEmployeeComponent(emp,sk)">Edit</button></div>
 </div>
 
 <div *ngIf="emp">

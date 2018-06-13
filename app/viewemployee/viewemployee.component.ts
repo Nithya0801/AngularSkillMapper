@@ -35,8 +35,9 @@ export class ViewemployeeComponent implements OnInit {
     this.mycontrol.getSkillById(this.emp.employeeid).subscribe(sk => this.sk = sk);
   }
 
-  updateEmployeeComponent(employee : Employee) : void{
+  updateEmployeeComponent(employee : Employee,sk : Skill) : void{
     this.mycontrol.updateEmployee(employee).subscribe();
+    this.mycontrol.updateSkill(sk).subscribe();
   }
 
   deleteEmployeeComponent(employee : Employee) : void{

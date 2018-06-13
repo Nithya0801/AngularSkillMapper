@@ -10,11 +10,23 @@
 </form>
   {{searchBox.value}}
 <div>
+  <table border="2">
+    <tr>
+    <th>EmpID</th>
+    <th>EmpName</th>
+    <th>Address</th>
+    <th>Mobileno</th>
+    <th>Qualification</th></tr>
+   
 <div *ngFor = ' let s of sk' (click)="getEmp(s.employee)">
-  <li><span>{{s.skillid}} : {{s.skill}} : {{s.voucher}}</span>Want Details Click on Skill</li>
+    <tr>
+   <td>{{s.employeeid}}</td>
+ <td>{{s.employeename}}</td>
+ <td>{{s.address}}</td>
+<td>{{s.phoneno}}</td>
+<td>{{s.qualification}}</td>
+</tr>
 </div>
-  <div *ngIf="emps">
-    {{emps.employeeid}} : {{emps.employeename}} : {{emps.phoneno}}
-  
-</div>
+
+</table>
 </div>
