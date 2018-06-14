@@ -16,7 +16,7 @@
   <div *ngIf="sk">
     <div><span>Skill : {{sk.skill}}</span><input [(ngModel)]="sk.skill "></div>
   </div>
-  <div><button  routerLink="delete/:employeeid" (click)="deleteEmployeeComponent(emp)">Delete</button> <button routerLink="update" (click)="updateEmployeeComponent(emp,sk)">Edit</button></div>
+  <div><button  routerLink="delete/:employeeid" (click)="deleteEmployeeComponent(emp,sk)">Delete</button> <button routerLink="update" (click)="updateEmployeeComponent(emp,sk)">Edit</button></div>
 </div>
 
 <div *ngIf="emp">

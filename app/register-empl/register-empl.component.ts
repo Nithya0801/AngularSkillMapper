@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Employee} from '../Employee';
+import {Skill} from '../Skill';
 import { MycontrolService } from '../mycontrol.service';
 import {NgForm} from '@angular/forms';
 @Component({
@@ -12,15 +13,20 @@ export class RegisterEmplComponent implements OnInit {
   employee : Employee[];
 
   emp : Employee;
+
+  sk : Skill;
+
+  sks : Skill[];
   constructor(private mycontrol : MycontrolService) { }
 
   ngOnInit() {
   }
 
 
-  add(employeeid : number,employeename : string,dob : string,gender : string,address : string,phoneno : string,doj : string,desgn : string,qualification : string)
+  add(employeeid : number,employeename : string,dob : string,gender : string,address : string,phoneno : string,doj : string,desgn : string,qualification : string,skillid : number,skill : string,voucher : string)
   {
     this.emp = new Employee();
+    this.sk = new Skill();
     this.emp.employeeid=employeeid;
     this.emp.employeename=employeename;
     this.emp.dob=dob;
@@ -31,6 +37,12 @@ export class RegisterEmplComponent implements OnInit {
     this.emp.desgn=desgn;
     this.emp.qualification=qualification;
     this.mycontrol.addEmployee(this.emp).subscribe(empl => this.employee.push(this.emp));
+    this.sk.skillid=skillid;
+    this.sk.skill=skill;
+    this.sk.employee=this.emp;
+  
+    this.sk.voucher=voucher;
+    this.mycontrol.addSkill(this.sk).subscribe(skil =>  this.sks.push(this.sk));
   }
   //addEmployeeComponent(employee : Employee) : void{
   //this.mycontrol.addEmployee(employee).subscribe(emp => this.employee.push(emp));

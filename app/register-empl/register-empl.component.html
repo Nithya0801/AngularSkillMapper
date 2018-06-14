@@ -32,8 +32,20 @@
   <tr><label>Qualification :
     <input #qualification/>
   </label></tr><br>
+  <tr><label>skillid :
+    <input #skillid/>
+  </label></tr><br>
+  <tr><label>skill :
+    <input #skill/>
+  </label></tr><br>
+  
+  <tr><label>voucher :
+    <input #voucher/>
+  </label></tr><br>
+
+  
   <!-- (click) passes input value to add() and then clears the input -->
-  <button routerLink='/add' (click)='add(employeeid.value,employeename.value,dob.value,gender.value,address.value,phoneno.value,doj.value,desgn.value,qualification.value)'>
+  <button routerLink='/add' (click)='add(employeeid.value,employeename.value,dob.value,gender.value,address.value,phoneno.value,doj.value,desgn.value,qualification.value,skillid.value,skill.value,voucher.value)'>
     add
   </button>
 </table>

@@ -29,6 +29,10 @@ export class MycontrolService {
     return this.http.post<Employee>(this.myurl,employee,httpOptions);
   }
 
+  addSkill(skill : Skill) : Observable<Skill>{
+    return this.http.post<Skill>(this.myskillurl,skill,httpOptions);
+  }
+
   getEmployee( employeeid : number) : Observable<Employee>{
     const url=this.myurl+"/"+employeeid;
     return this.http.get<Employee>(url);
@@ -46,6 +50,11 @@ export class MycontrolService {
   deleteEmployee(employee : Employee) : Observable<Employee>{
     const url=this.myurl+'/'+employee.employeeid;
     return this.http.delete<Employee>(url,httpOptions);
+  }
+
+  deleteSkill(skill : Skill) : Observable<Skill>{
+    const url=this.myskillurl+'/'+skill.employee.employeeid;
+    return this.http.delete<Skill>(url,httpOptions);
   }
 
   updateEmployee(employee : Employee) : Observable<any>{

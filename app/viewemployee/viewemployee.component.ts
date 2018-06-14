@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SkipSelf } from '@angular/core';
 import {Employee} from '../Employee';
 import {Skill} from '../Skill';
 import {MycontrolService} from '../mycontrol.service';
@@ -40,7 +40,8 @@ export class ViewemployeeComponent implements OnInit {
     this.mycontrol.updateSkill(sk).subscribe();
   }
 
-  deleteEmployeeComponent(employee : Employee) : void{
+  deleteEmployeeComponent(employee : Employee, ski : Skill) : void{
     this.mycontrol.deleteEmployee(employee).subscribe();
+    this.mycontrol.deleteSkill(ski).subscribe();
   }
 }
